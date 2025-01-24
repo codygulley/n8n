@@ -6,7 +6,7 @@ import { replaceInFile } from 'replace-in-file';
  * Creates a new credentials or node
  *
  * @param {string} sourceFilePath The path to the source template file
- * @param {string} destinationFilePath The path the write the new file to
+ * @param {string} destinationFilePath The path to write the new file to
  * @param {object} replaceValues The values to replace in the template file
  */
 export async function createTemplate(

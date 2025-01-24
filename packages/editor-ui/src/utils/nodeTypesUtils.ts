@@ -169,7 +169,7 @@ export const getMainAuthField = (nodeType: INodeTypeDescription | null): INodePr
 /**
  * A field is considered main auth filed if:
  * 1. It is a credential dependency
- * 2. If all of it's possible values are used in credential's display options
+ * 2. If all of its possible values are used in credential's display options
  */
 const findAlternativeAuthField = (
 	nodeType: INodeTypeDescription,

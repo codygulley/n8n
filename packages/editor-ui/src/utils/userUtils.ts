@@ -86,7 +86,7 @@ function isPersonalizationSurveyV2OrLater(
 
 export const LOGIN_STATUS: { LoggedIn: ILogInStatus; LoggedOut: ILogInStatus } = {
 	LoggedIn: 'LoggedIn', // Can be owner or member or default user
-	LoggedOut: 'LoggedOut', // Can only be logged out if UM has been setup
+	LoggedOut: 'LoggedOut', // Can only be logged out if UM has been set up
 };
 
 export const isUserGlobalOwner = (user: IUser): boolean => user.role === ROLE.Owner;

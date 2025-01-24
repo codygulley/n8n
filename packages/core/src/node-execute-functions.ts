@@ -818,7 +818,7 @@ export async function proxyRequestToAxios(
 					statusCode: response.status,
 					/**
 					 * Axios adds `status` when serializing, causing `status` to be available only to the client.
-					 * Hence we add it explicitly to allow the backend to use it when resolving expressions.
+					 * Hence, we add it explicitly to allow the backend to use it when resolving expressions.
 					 */
 					status: response.status,
 					error: responseData,
@@ -906,7 +906,7 @@ function convertN8nRequestToAxios(n8nRequest: IHttpRequestOptions): AxiosRequest
 		) {
 			axiosRequest.data = new URLSearchParams(n8nRequest.body as Record<string, string>);
 		}
-		// if there is a body and it's empty (does not have properties),
+		// if there is a body, and it's empty (does not have properties),
 		// make sure not to send anything in it as some services fail when
 		// sending GET request with empty body.
 		if (typeof body === 'string' || (typeof body === 'object' && !isObjectEmpty(body))) {
@@ -1395,9 +1395,9 @@ export async function requestOAuth2(
 	// on the token-type used.
 	const newRequestOptions = token.sign(requestOptions as ClientOAuth2RequestObject);
 	const newRequestHeaders = (newRequestOptions.headers = newRequestOptions.headers ?? {});
-	// If keep bearer is false remove the it from the authorization header
+	// If keepBearer is false remove 'Bearer' from the authorization header
 	if (oAuth2Options?.keepBearer === false && typeof newRequestHeaders.Authorization === 'string') {
-		newRequestHeaders.Authorization = newRequestHeaders.Authorization.split(' ')[1];
+		newRequestHeaders.Authorization = newRequestHeaders.Authorization.replace('Bearer ', '');
 	}
 	if (oAuth2Options?.keyToIncludeInAccessTokenHeader) {
 		Object.assign(newRequestHeaders, {

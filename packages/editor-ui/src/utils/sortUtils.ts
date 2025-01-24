@@ -52,7 +52,7 @@ function fuzzyMatch(pattern: string, target: string): { matched: boolean; outSco
 		target,
 		0 /* patternCurIndex */,
 		0 /* strCurrIndex */,
-		null /* srcMatces */,
+		null /* srcMatches */,
 		matches,
 		maxMatches,
 		0 /* nextMatch */,

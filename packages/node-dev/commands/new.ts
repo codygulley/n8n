@@ -51,7 +51,7 @@ export class New extends Command {
 
 				const nodeTypeAnswers = await inquirer.prompt(nodeTypeQuestion);
 
-				// Choose a the template-source-file depending on user input.
+				// Choose a template-source-file depending on user input.
 				sourceFolder = 'execute';
 				defaultName = 'My Node';
 				if (nodeTypeAnswers.nodeType === 'Trigger') {
